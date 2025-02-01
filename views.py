@@ -7,6 +7,10 @@ class BaseView:
         self.router = APIRouter()
         self.setup_routes()
 
+    def setup_routes(self):
+        pass
+
+
 class UserView(BaseView):
     def __init__(self):
         self.users = {}  # In-memory storage
