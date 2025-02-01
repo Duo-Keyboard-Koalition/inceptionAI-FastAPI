@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "chrome-cookies-secure": "^2.1.1",
     "puppeteer": "^22.11.2"
   },
