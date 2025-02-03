@@ -1,0 +1,24 @@
+{
+  "name": "puppeteer-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-cookies-secure": "^2.1.1",
+    "puppeteer": "^22.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duo-Keyboard-Koalition/puppeter-upload-image-icon-notion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Duo-Keyboard-Koalition/puppeter-upload-image-icon-notion/issues"
+  },
+  "homepage": "https://github.com/Duo-Keyboard-Koalition/puppeter-upload-image-icon-notion#readme",
+  "description": ""
+}
