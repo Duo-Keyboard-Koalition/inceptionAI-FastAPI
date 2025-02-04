@@ -1,6 +1,11 @@
 // Run before running node main.js
 // /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+<<<<<<< HEAD
 const CHROME_PROFILE_PATH = "/Users/darcy/Library/Application Support/Google/Chrome/Profile 5";
+=======
+
+const puppeteer = require('puppeteer');
+>>>>>>> 729bc69 (able to connect to a chrome remotelly)
 
 const puppeteer = require("puppeteer");
 const fs = require("fs");
@@ -51,6 +56,7 @@ async function upload_image_notion(page, notionUrl, imagePath) {
       await page.waitForNavigation();
       console.log("Successfully navigated to Notion");
 
+<<<<<<< HEAD
       const with_cv_imag_selector = "#notion-app > div > div:nth-child(1) > div > div:nth-child(2) > main > div > div > div.whenContentEditable > div > div.layout-full > div > div > div:nth-child(2) > div > div:nth-child(1)";
       
       await page.waitForSelector(with_cv_imag_selector);
@@ -74,6 +80,43 @@ async function upload_image_notion(page, notionUrl, imagePath) {
       await new Promise(resolve => setTimeout(resolve, 10000));
       // exit the function
       return;
+=======
+    const page = await browser.newPage();
+    await page.goto('https://www.notion.so/darcy-liu/5a7c82f8-e553-46a2-9c57-cd2994373424-5a7c82f8e55346a29c57cd2994373424');
+    console.log('Successfully navigated to Notion');
+    // click the button with the text change cover
+    // click the button with the text change cover
+    // Position mouse over cover image
+
+
+    // if there is already a cover image
+    while (true){
+      const selector = '#notion-app > div > div:nth-child(1) > div > div:nth-child(2) > main > div > div > div.whenContentEditable > div > div.layout-full > div > div > div:nth-child(2) > div > div:nth-child(1)';
+
+      try {
+          await page.waitForSelector(selector);
+          await page.click(selector);
+          console.log('Successfully clicked element');
+          break;
+      } catch (error) {
+          console.error('Failed to click element:', error);
+          const no_cv_img_selector = '#notion-app > div > div:nth-child(1) > div > div:nth-child(2) > main > div > div > div.whenContentEditable > div > div:nth-child(3) > div > div > div.pseudoSelection > div:nth-child(2) > div > div:nth-child(1)';
+
+          try {
+              await page.waitForSelector(no_cv_img_selector);
+              await page.click(no_cv_img_selector);
+              console.log('Successfully clicked element');
+          } catch (error) {
+              console.error('Failed to click element:', error);
+              break;
+          }
+      }
+    }
+     // if there is no cover image
+
+    // Don't close the browser, just disconnect
+    await browser.disconnect();
+>>>>>>> 729bc69 (able to connect to a chrome remotelly)
   } catch (error) {
       console.error("Upload error:", error);
       throw error;
